@@ -1,0 +1,21 @@
+Learning Docker [Day 3] 🚀
+
+✅ Let's learn about the Basics Docker Commands
+
+➡ docker search - Search Docker Hub for images
+
+➡ docker pull - Download an image from a registry
+
+➡ docker start - Start one or more stopped containers
+
+➡ docker attach - Attach local standard input, output, and error streams to a running container
+
+➡ docker stop - stop one or more running containers
+
+➡ docker rm - Remove one or more containers
+
+➡ docker rmi - Remove one or more images
+
+➡ docker rename - Rename a container
+
+➡ docker info - Display system-wide information

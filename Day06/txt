@@ -1,0 +1,52 @@
+Learning Docker [Day 6] 🚀
+
+✅ Let's learn about the Volume Mapping Concept in Docker
+
+In this post, I would be talking about different ways to make persistent data storage in docker using volume mapping.
+
+While working with a docker container I always have a fear that the container is deleted accidentally. All of the data we have stored will be deleted with the deletion of the container. To mitigate this problem we will be using docker volumes.
+
+There are two methods to initialize volumes, with some subtle differences that are important to understand.
+
+☑ Method One (01): Container-to-Container Volume Mapping
+
+Step 1: Creating a Volume
+Create Dockerfile: vi Dockerfile --> Open editor -->
+FROM ubuntu
+VOLUME ["/data"]
+:wq --> exit
+
+Step 2: Creating image name as myimg --> Build Dokerfile --> docker build -t myimg .
+
+Step 3: Verify image create or not --> docker images
+
+Step 4: Create a container from myimg --> docker run -it --name mycont1 myimg /bin/bash
+
+Step 5: Verify ls data/ in mycont1 and create an empty myfile and exit.
+
+Step 6: Then create mycont2 reference from mycont1: docker run -it --name mycont2 --privileged=true --volumes-from mycont1 ubuntu /bin/bash
+
+Step 7: Exit from mycont2 and verify whether mycont1 & mycont2 are created or not and verify whether data is copied or not in their container. And create an empty file in mycont2 and verify those empty files are shown in mycont1 if show these files then successfully created volume mapping on those containers.
+
+☑ Method One (02): Step 8: Create a Volume Map using a different way: Create mycont3 from mycont2
+docker run -it --name mycont3 -v /raj ubuntu /bib/bash
+
+Step 9: verify in mycont3 raj file was created or not if created then create an empty akashfile and exit from this container.
+
+Step 10: Create container with volume mapping from cont3 to cont4 --> docker run -it --name mycont4 --privileged=true --volumes-from mycont3 ubuntu /bin/bash
+
+Step 11: Verify in this container ls akashfile/ --> Check whether files are available or not where we are created in mycont3.
+
+Step 12: Create new files in mycont4 and verify to check whether these files are shown in mycont3 or not if shown then we successfully create volume mapping in those containers.
+
+☑ Method Two: Host-to-Conatiner Volume Mapping
+
+Step 13: Check in ec2-user files & directories --> ls -la
+
+Step 14: Now we are mapping the host to the container -->
+docker run -it --name testcontainer -v /home/ec2-user:/raj ubuntu /bin/bash
+
+Step 15: Verify in this container in raj-folder host files and folders are shown or not if shown then we are successfully volume mapping to this container
+
+With these two methods, we can achieve persistent data storage in docker for a better understanding visit: https://lnkd.in/dg7W7YiG
+

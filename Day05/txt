@@ -1,0 +1,70 @@
+Learning Docker [Day 5] 🚀
+
+✅ Let's learn about the Dockerfile
+
+What is Dockerfile?
+
+Dockerfile is a simple text file that consists of instructions to build Docker images.
+
+Before we create our first Dockerfile, it is important to understand what makes up the file.
+
+Dockerfile consists of specific commands that guide you on how to build a specific Docker image.
+
+This topic covers recommended best practices and methods for building efficient images.
+
+Docker builds images automatically by reading the instructions from a Dockerfile -- a text file that contains all commands, in order, needed to build a given image. A Dockerfile adheres to a specific format and set of instructions which you can find in the Dockerfile reference.
+
+✅ The specific commands you can use in a Dockerfile are:
+
+Each instruction creates one layer:
+
+FROM - creates a layer from the ubuntu:18.04 Docker image
+COPY - adds files from your Docker client’s current directory
+RUN - builds your application with make
+CMD - specifies what command to run within the container
+PULL - Adds files from your Docker repository
+ENV - provides default values for variables that can be accessed within the container
+ADD - If you want to extract a TAR file inside a Docker Container or copy files from a URL or local directory
+MAINTAINER - declares the author field of the images
+
+✅ Example: DOCKERFILE_1 CREATING TEST IMAGE
+
+FROM ubuntu 
+RUN echo "Hi Akash" > /tmp/testfile
+RUN apt-get update -y
+RUN apt-get install –y nginx
+RUN apt-get install tree -y
+
+➡ Command: docker build -t (new_image)
+ex. test
+➡ Verify test image create or not using the command: docker images
+➡ Creating testcontainer using a test image: docker run -it --name testcontainer test /bin/bash
+➡ Verify whether the testcontainer created or not using the command: docker ps -a
+➡ Verify what instruction I am giving in Dockerfile to create an image and created a new container using that image ex. test
+all instruction working or not.
+
+✅ Example: DOCKERFILE_2
+
+FROM ubuntu
+WORKDIR /tmp
+MAINTAINER aakashkale112@gmail.com
+ENV myname akash
+RUN echo "Hi Akash" > /tmp/testfile
+COPY testfile1 /tmp
+ADD test.tar.gz /tmp
+
+✅ Example: DOCKERFILE_3 FOR EXPOSE INSTRUCTION
+
+FROM ubuntu:latest
+EXPOSE 80/tcp
+EXPOSE 80/udp
+
+➡ sudo docker build -t expose-demo
+➡ sudo docker run -it an expose-demo bash
+➡ sudo docker image inspect --format='' expose-demo 
+➡ sudo docker run -P -d expose-demo
+➡ sudo docker start
+➡ sudo docker container ls
+
+Note: All Dockerfile instructions are not covered in this post. Follow the given link for a better understanding of Dockerfile instructions: https://lnkd.in/dVSuS5zS
+

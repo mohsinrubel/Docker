@@ -1,0 +1,34 @@
+Learning Docker [Day 1] 🚀
+
+✅ Let's learn about the Step-By-Step Docker Installation on Windows
+
+1. Go to the website https://lnkd.in/dr3WtFWn
+ and download the docker file.
+Note: A 64-bit processor and 4GB system RAM are the hardware prerequisites required to run Docker on Windows 10 successfully.
+
+2. Double-click on the Docker Desktop Installer.exe to run the installer.
+Note: Suppose the installer (Docker Desktop Installer.exe) is not downloaded; you can get it from Docker Hub and run it whenever required.
+
+3. Once you start installing, always enable Hyper-V Windows Feature on the Configuration page.
+
+4. Then, follow the installation process to allow the installer and wait till the process is done.
+
+5. After completing the installation process, click Close and restart.
+
+✅ Start Docker Desktop Tool
+
+➡ After the installation process is complete, the tool does not start automatically. To start the Docker tool, search for the tool, and select Docker Desktop in your desktop search results.
+
+➡ Before starting the application, Docker offers an onboarding tutorial. The tutorial explains how to build a Docker image and run a container.
+
+➡ You are now successfully running Docker Desktop on Windows.
+Next, follow the instruction below to install the Docker engine on your system.
+
+➡ Go to Docker CLI and run the Docker version to verify the version of Docker installation on the system.
+
+➡ Congratulations, Docker Installation on Windows is now done, and now, you are ready to build and run Docker images and containers on the Docker ecosystem.
+
+✅ If you will receive the WSL 2 installation with an incomplete error or show Docker Desktop is Stopped message when you try to start Docker then follow the steps on the given link to fix this error: https://lnkd.in/dtZ7PsG9
+
+
+Note: Verification of pulling an image from the docker hub and creating a container from this image on Docker Desktop cover on the next Docker post due to upload videos length of up to 15 Minutes.

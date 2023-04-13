@@ -1,0 +1,44 @@
+Learning Docker [Day 4] 🚀
+
+✅ Let's learn about the Step-By-Step How to Create a Docker Image From a Container & Pull and Push Images (Docker_Registry) & Private Repository in DockerHub
+
+Step 1: Inspect Containers: docker ps -a
+
+Step 2: Inspect Images: docker images
+
+Step 3: Create a Container from exciting available image
+
+Create a new container: docker run [ -it/-td ] --name (New_container_name) image_name (from which image you use for creating container) [ARG.. /bin/bash]
+
+Step 4: Inspect new container while creating or not or running: docker ps
+
+Step 5: Modify the running container: Install dependencies, creating files nad folders etc.
+
+Step 6: create images from this newconatiner: docker commit newconatiner newimage
+
+Step 7: Tag the Image: docker tag (newimage) (tag_name)
+
+✅ Push And Pull Images From Docker Hub:
+
+Step 8:  Log in to a registry: docker login [OPTIONS] [SERVER]
+
+Step 9: If you are logged in docker registry then push our image in to the docker registry: docker push [OPTIONS] NAME[:TAG]
+
+Step 10: Verify your image pushed or not in docker registry
+
+Step 11: When if you see pushed imaged in docker registry then pull this image in to new EC2 logged in in another region: docker pull [OPTIONS] NAME[:TAG|@DIGEST]
+
+Step 12: Create newconatiner in EC2 logged in another region from using this pull image from docker registry
+
+Step 13: Pushed Imgae in to DockerHub make this Images is Private Repository
+
+✅ Use Of Private Repository:
+
+Private Docker repositories provide restricted access to the images that they contain. Unlike public repositories, only authorized users can access the images. This way, it's possible to allow access only to a specific group of users, like organizations, teams, or even a single person.
+
+✅ Uses of DockerHub Account: Docker Hub is a hosted repository service provided by Docker for finding and sharing container images with your team. Key features include: Private Repositories: Push and pull container images. Automated Builds: Automatically build container images from GitHub and Bitbucket and push them to Docker Hub.
+
+Note: Signup Docker Registry Account from the given link: https://lnkd.in/dAiDjiAm
+
+
+Note: Follow given Link for better understanding: https://lnkd.in/dnr8f5BJ
